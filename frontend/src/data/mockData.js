@@ -125,7 +125,7 @@ export const testimonials = [
     role: 'Patient, Lahore',
     avatar: 'FK',
     rating: 5,
-    text: 'My mother is 70 and cannot read English prescriptions. MediRead AI explained everything in simple Urdu — it was a life-changing experience for our family.',
+    text: 'My mother is 70 and cannot read English prescriptions. RxRead AI explained everything in simple Urdu — it was a life-changing experience for our family.',
   },
   {
     id: 2,
@@ -141,7 +141,7 @@ export const testimonials = [
     role: 'Caregiver, Peshawar',
     avatar: 'SY',
     rating: 5,
-    text: 'Taking care of elderly parents is hard. MediRead helps me manage all their medicines correctly. The audio feature is fantastic for my father who cannot read.',
+    text: 'Taking care of elderly parents is hard. RxRead helps me manage all their medicines correctly. The audio feature is fantastic for my father who cannot read.',
   },
   {
     id: 4,

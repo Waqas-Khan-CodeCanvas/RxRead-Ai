@@ -47,7 +47,7 @@ const UploadPage = () => {
             Upload Your Prescription
           </h1>
           <p className="text-slate-300 text-lg max-w-xl mx-auto">
-            Take a clear photo of your handwritten prescription and let MediRead AI explain it in simple language.
+            Take a clear photo of your handwritten prescription and let RxRead AI explain it in simple language.
           </p>
         </motion.div>
 

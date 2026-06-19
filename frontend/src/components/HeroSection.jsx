@@ -55,7 +55,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Upload a photo of any handwritten prescription. MediRead AI explains every medicine, dosage, and instruction — in your language, in simple words.
+            Upload a photo of any handwritten prescription. RxRead AI explains every medicine, dosage, and instruction — in your language, in simple words.
           </motion.p>
 
           {/* CTAs */}

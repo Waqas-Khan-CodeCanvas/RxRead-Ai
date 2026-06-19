@@ -30,7 +30,7 @@ const LandingPage = () => {
               viewport={{ once: true }}
               className="section-heading"
             >
-              How MediRead AI Works
+              How RxRead AI Works
             </motion.h2>
           </div>
 
@@ -94,7 +94,7 @@ const LandingPage = () => {
               transition={{ delay: 0.1 }}
               className="text-slate-400 mt-3 max-w-xl mx-auto"
             >
-              From rural villages to urban hospitals, MediRead AI helps everyone understand their healthcare.
+              From rural villages to urban hospitals, RxRead AI helps everyone understand their healthcare.
             </motion.p>
           </div>
 

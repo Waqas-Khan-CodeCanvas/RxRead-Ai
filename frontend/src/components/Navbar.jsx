@@ -41,7 +41,7 @@ const Navbar = () => {
               M
             </div>
             <span className="text-white font-display font-bold text-lg">
-              Medi<span className="gradient-text">Read</span>
+              Rx<span className="gradient-text">Read</span>
               <span className="text-teal-400 text-sm font-semibold ml-0.5">AI</span>
             </span>
           </Link>

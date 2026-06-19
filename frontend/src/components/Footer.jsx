@@ -15,7 +15,7 @@ const Footer = () => {
                 M
               </div>
               <span className="text-white font-display font-bold text-lg">
-                MediRead <span className="gradient-text">AI</span>
+                RxRead <span className="gradient-text">AI</span>
               </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
@@ -65,7 +65,7 @@ const Footer = () => {
 
         <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-slate-500 text-sm">
-            © 2024 MediRead AI. All rights reserved.
+            © 2024 RxRead AI. All rights reserved.
           </p>
           <p className="text-slate-500 text-sm flex items-center gap-1.5">
             Made with <FiHeart className="text-red-400" size={14} /> for better healthcare access

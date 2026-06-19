@@ -41,7 +41,7 @@ const AboutPage = () => {
               Healthcare Should Be <span className="gradient-text">Understood</span> by Everyone
             </h1>
             <p className="text-slate-300 text-lg leading-relaxed">
-              MediRead AI was born from a simple observation: millions of patients receive prescriptions they cannot read, in a language they don't understand, in handwriting they cannot decipher. We built the tool we wish existed.
+              RxRead AI was born from a simple observation: millions of patients receive prescriptions they cannot read, in a language they don't understand, in handwriting they cannot decipher. We built the tool we wish existed.
             </p>
           </motion.div>
         </div>
@@ -106,7 +106,7 @@ const AboutPage = () => {
           <motion.div {...fadeUp()} className="text-center mb-12">
             <h2 className="section-heading mb-4">Accessibility Goals</h2>
             <p className="text-slate-400 max-w-xl mx-auto">
-              We design for the most vulnerable users first. If a 70-year-old in a rural area with low literacy can use MediRead AI, it works for everyone.
+              We design for the most vulnerable users first. If a 70-year-old in a rural area with low literacy can use RxRead AI, it works for everyone.
             </p>
           </motion.div>
 
@@ -163,7 +163,7 @@ const AboutPage = () => {
               Whether you're a patient, doctor, NGO, or developer — there's a role for you in making healthcare communication accessible.
             </p>
             <Link to="/upload" className="btn-primary inline-flex items-center gap-2">
-              Try MediRead AI Free →
+              Try RxRead AI Free →
             </Link>
           </motion.div>
         </div>

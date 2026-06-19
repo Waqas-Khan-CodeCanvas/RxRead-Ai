@@ -128,7 +128,7 @@ const ResultsPage = () => {
             {/* Disclaimer */}
             <div className="glass-card p-4">
               <p className="text-xs text-slate-400 leading-relaxed">
-                ⚠️ <strong className="text-slate-300">Medical Disclaimer:</strong> MediRead AI is an assistive tool only. Always follow your doctor's original instructions. Contact your doctor or pharmacist for any questions about your medicines.
+                ⚠️ <strong className="text-slate-300">Medical Disclaimer:</strong> RxRead AI is an assistive tool only. Always follow your doctor's original instructions. Contact your doctor or pharmacist for any questions about your medicines.
               </p>
             </div>
 
