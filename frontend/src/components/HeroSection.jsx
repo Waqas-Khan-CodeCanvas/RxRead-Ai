@@ -122,9 +122,9 @@ const HeroSection = () => {
             transition={{ delay: 0.4 }}
             className="relative max-w-4xl mx-auto"
           >
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl overflow-hidden shadow-2xl shadow-black/40">
+            {/* <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl overflow-hidden shadow-2xl shadow-black/40">
 
-              {/* Header */}
+              
               <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-slate-500">
@@ -142,7 +142,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Medicines */}
+              
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 p-5">
                 {medicines.map((m, i) => (
                   <div
@@ -159,9 +159,9 @@ const HeroSection = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
-            {/* softer glow (reduced intensity) */}
+            
             <div className="absolute left-1/2 -translate-x-1/2 -bottom-8 w-[60%] h-16 bg-cyan-500/10 blur-3xl rounded-full" />
           </motion.div>
 
