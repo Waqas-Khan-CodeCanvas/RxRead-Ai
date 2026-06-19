@@ -1,66 +1,82 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import HeroSection   from '../components/HeroSection'
-import FeatureCard   from '../components/FeatureCard'
+
+import HeroSection from '../components/HeroSection'
+import FeatureCard from '../components/FeatureCard'
 import TestimonialCard from '../components/TestimonialCard'
+
 import { features, howItWorksSteps, testimonials } from '../data/mockData'
 
 const LandingPage = () => {
   return (
-    <div className="bg-slate-900">
+    <div className="bg-slate-900 text-white">
+
       {/* ── Hero ─────────────────────────────── */}
       <HeroSection />
 
       {/* ── How It Works ─────────────────────── */}
-      <section className="py-24 px-4">
+      <section className="py-28 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+
+          <div className="text-center mb-14">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-teal-400 font-semibold text-sm uppercase tracking-widest mb-3"
+              className="text-teal-400 text-xs tracking-[0.2em] uppercase mb-3"
             >
               Simple Process
             </motion.p>
+
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-heading"
+              className="text-3xl md:text-4xl font-semibold tracking-tight"
             >
               How RxRead AI Works
             </motion.h2>
+
+            <p className="text-slate-400 mt-3 max-w-xl mx-auto text-sm md:text-base">
+              A quick 3-step flow designed to feel effortless for anyone.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
             {howItWorksSteps.map((step, i) => (
               <motion.div
                 key={step.step}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
+                transition={{ duration: 0.5, delay: i * 0.12 }}
                 className="relative text-center"
               >
-                {/* Connector line between steps */}
+                {/* connector line (lighter, less aggressive) */}
                 {i < howItWorksSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-12 left-[calc(50%+3rem)] right-[-50%] h-px bg-gradient-to-r from-white/20 to-transparent" />
+                  <div className="hidden md:block absolute top-14 left-[60%] w-full h-px bg-white/5" />
                 )}
 
-                <div className="flex justify-center mb-5">
+                <div className="flex justify-center mb-6">
                   <div className="relative">
-                    <div className="w-24 h-24 bg-gradient-to-br from-blue-500/20 to-teal-500/20 border border-white/10 rounded-2xl flex items-center justify-center text-4xl">
+                    <div className="w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl">
                       {step.icon}
                     </div>
-                    <span className="absolute -top-2 -right-2 w-7 h-7 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+
+                    <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-r from-teal-400 to-cyan-500 text-xs flex items-center justify-center font-semibold">
                       {i + 1}
                     </span>
                   </div>
                 </div>
-                <h3 className="text-white font-display font-bold text-xl mb-2">{step.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto">{step.description}</p>
+
+                <h3 className="text-lg font-medium mb-2">
+                  {step.title}
+                </h3>
+
+                <p className="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto">
+                  {step.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -68,121 +84,124 @@ const LandingPage = () => {
       </section>
 
       {/* ── Features ─────────────────────────── */}
-      <section className="py-24 px-4 bg-slate-800/30">
+      <section className="py-28 px-4 bg-slate-800/20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-blue-400 font-semibold text-sm uppercase tracking-widest mb-3"
-            >
+
+          <div className="text-center mb-14">
+            <p className="text-blue-400 text-xs uppercase tracking-[0.2em] mb-3">
               Everything You Need
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading"
-            >
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-semibold">
               Built for Every Patient
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-slate-400 mt-3 max-w-xl mx-auto"
-            >
-              From rural villages to urban hospitals, RxRead AI helps everyone understand their healthcare.
-            </motion.p>
+            </h2>
+
+            <p className="text-slate-400 mt-4 max-w-xl mx-auto text-sm md:text-base">
+              From rural clinics to urban hospitals, clarity in healthcare should feel universal.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, i) => (
               <FeatureCard key={i} {...feature} index={i} />
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* ── Stats band ───────────────────────── */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="glass-card p-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      {/* ── Stats ─────────────────────────────── */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: '94%',    label: 'Average Accuracy' },
-              { value: '5',      label: 'Languages Supported' },
-              { value: '<5s',    label: 'Analysis Time' },
-              { value: '1 in 3', label: 'Patients Misread Rx' },
+              { value: 'AI', label: 'Powered Analysis' },
+              { value: '5+', label: 'Languages Supported' },
+              { value: '<5s', label: 'Processing Time' },
+              { value: '24/7', label: 'Always Available' },
             ].map((stat, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: i * 0.08 }}
               >
-                <p className="text-3xl font-display font-bold gradient-text mb-1">{stat.value}</p>
-                <p className="text-slate-400 text-sm">{stat.label}</p>
+                <p className="text-2xl md:text-3xl font-semibold text-cyan-300 mb-1">
+                  {stat.value}
+                </p>
+                <p className="text-slate-400 text-sm">
+                  {stat.label}
+                </p>
               </motion.div>
             ))}
           </div>
+
         </div>
       </section>
 
       {/* ── Testimonials ─────────────────────── */}
-      <section className="py-24 px-4 bg-slate-800/30">
+      <section className="py-28 px-4 bg-slate-800/20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-purple-400 font-semibold text-sm uppercase tracking-widest mb-3"
-            >
+
+          <div className="text-center mb-14">
+            <p className="text-purple-400 text-xs uppercase tracking-[0.2em] mb-3">
               Real Stories
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="section-heading"
-            >
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-semibold">
               Trusted by Patients & Doctors
-            </motion.h2>
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((t, i) => (
               <TestimonialCard key={t.id} testimonial={t} index={i} />
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* ── CTA Banner ───────────────────────── */}
-      <section className="py-24 px-4">
-        <div className="max-w-3xl mx-auto text-center">
+      {/* ── CTA ─────────────────────────────── */}
+      <section className="py-28 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-blue-600/20 to-teal-600/20 border border-white/10 rounded-3xl p-12"
+            className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-transparent p-12 overflow-hidden"
           >
-            <p className="text-4xl mb-4">💊</p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-              Ready to Understand Your Prescription?
-            </h2>
-            <p className="text-slate-300 mb-8 leading-relaxed">
-              Upload a photo right now — no account needed. Get a full breakdown of your medicines in seconds.
-            </p>
-            <Link to="/upload" className="btn-primary inline-flex items-center gap-2 text-base px-8 py-4">
-              Upload Prescription Free →
-            </Link>
+            <div className="absolute inset-0 opacity-40 blur-2xl bg-cyan-500/10" />
+
+            <div className="relative z-10">
+
+              <div className="text-4xl mb-5">💊</div>
+
+              <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+                Understand your prescription instantly
+              </h2>
+
+              <p className="text-slate-300 text-sm md:text-base max-w-2xl mx-auto mb-8">
+                Upload a prescription and get clear instructions, dosage details,
+                and multilingual explanations in seconds.
+              </p>
+
+              <Link
+                to="/upload"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-cyan-500 text-black font-medium hover:bg-cyan-400 transition"
+              >
+                Upload Prescription →
+              </Link>
+
+            </div>
           </motion.div>
+
         </div>
       </section>
+
     </div>
   )
 }

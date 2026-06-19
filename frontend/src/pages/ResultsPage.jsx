@@ -3,12 +3,12 @@ import { useNavigate, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FiArrowLeft, FiDownload, FiShare2, FiAlertTriangle } from 'react-icons/fi'
 
-import MedicineCard       from '../components/MedicineCard'
-import LanguageSelector   from '../components/LanguageSelector'
-import AudioPlayer        from '../components/AudioPlayer'
-import ConfidenceMeter    from '../components/ConfidenceMeter'
+import MedicineCard from '../components/MedicineCard'
+import LanguageSelector from '../components/LanguageSelector'
+import AudioPlayer from '../components/AudioPlayer'
+import ConfidenceMeter from '../components/ConfidenceMeter'
 import PrescriptionPreview from '../components/PrescriptionPreview'
-import ResultSummary      from '../components/ResultSummary'
+import ResultSummary from '../components/ResultSummary'
 
 import useLanguage from '../hooks/useLanguage'
 import { mockPrescriptionData } from '../data/mockData'
@@ -28,118 +28,151 @@ const ResultsPage = () => {
   const specialNotes = data.specialNotes[currentLanguage] || data.specialNotes.en
 
   return (
-    <div className="min-h-screen bg-slate-900 py-6 px-4">
-      <div className="max-w-5xl mx-auto">
+    <div className="min-h-screen bg-slate-950 text-white px-4 py-6">
+      <div className="max-w-6xl mx-auto">
 
-        {/* Top bar */}
-        <div className="flex items-center justify-between mb-8 pt-4">
+        {/* ── Header (clean + grouped) ── */}
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-10">
+
           <button
             onClick={() => navigate('/upload')}
-            className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
+            className="flex items-center gap-2 text-slate-400 hover:text-white text-sm transition"
           >
             <FiArrowLeft size={16} />
-            Upload New
+            New Upload
           </button>
+
           <div className="flex items-center gap-2">
-            <button className="btn-ghost text-sm px-4 py-2 flex items-center gap-2">
-              <FiShare2 size={15} /> Share
+            <button className="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-sm flex items-center gap-2 transition">
+              <FiShare2 size={14} />
+              Share
             </button>
-            <button className="btn-primary text-sm px-4 py-2 flex items-center gap-2">
-              <FiDownload size={15} /> Save PDF
+
+            <button className="px-4 py-2 rounded-lg bg-cyan-500 text-black text-sm font-medium hover:bg-cyan-400 transition flex items-center gap-2">
+              <FiDownload size={14} />
+              Export
             </button>
           </div>
         </div>
 
-        {/* Page title */}
+        {/* ── Title block (more “report-like”) ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
+          className="mb-10"
         >
-          <p className="text-teal-400 font-semibold text-sm uppercase tracking-widest mb-1">Analysis Complete</p>
-          <h1 className="text-3xl font-display font-bold text-white">Your Prescription Results</h1>
+          <p className="text-cyan-400 text-xs uppercase tracking-[0.2em] mb-2">
+            Analysis complete
+          </p>
+
+          <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">
+            Prescription Report
+          </h1>
+
+          <p className="text-slate-400 text-sm mt-2 max-w-xl">
+            AI-generated breakdown of medicines, dosage instructions, and safety notes.
+          </p>
         </motion.div>
 
-        {/* Language selector */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="mb-8"
-        >
-          <LanguageSelector currentLanguage={currentLanguage} onLanguageChange={changeLanguage} />
-        </motion.div>
+        {/* ── Language selector (kept but less dominant) ── */}
+        <div className="mb-8">
+          <LanguageSelector
+            currentLanguage={currentLanguage}
+            onLanguageChange={changeLanguage}
+          />
+        </div>
 
+        {/* ── Layout ── */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* ── Left column: main content ── */}
-          <div className="lg:col-span-2 space-y-6">
 
-            {/* Doctor + patient summary */}
+          {/* ── MAIN ── */}
+          <div className="lg:col-span-2 space-y-8">
+
+            {/* Summary (make it feel like “top insight”) */}
             <ResultSummary data={data} summaryText={summaryText} />
 
-            {/* Medicines heading */}
-            <div>
-              <h2 className="text-white font-display font-bold text-xl mb-4">
-                💊 Your Medicines ({data.medicines.length})
+            {/* Medicines */}
+            <section>
+              <h2 className="text-lg font-semibold mb-4">
+                Medicines
+                <span className="text-slate-500 font-normal ml-2 text-sm">
+                  ({data.medicines.length})
+                </span>
               </h2>
+
               <div className="space-y-4">
                 {data.medicines.map((medicine, i) => (
-                  <MedicineCard key={medicine.id} medicine={medicine} index={i} />
+                  <MedicineCard
+                    key={medicine.id}
+                    medicine={medicine}
+                    index={i}
+                  />
                 ))}
               </div>
-            </div>
+            </section>
 
-            {/* Special notes */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="glass-card p-5"
-            >
-              <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-                <span>📋</span> Special Instructions
+            {/* Special notes (less “boxed alert”, more “info section”) */}
+            <section className="bg-white/5 border border-white/10 rounded-2xl p-5">
+              <h3 className="text-sm font-semibold mb-4 flex items-center gap-2">
+                📋 Special Instructions
               </h3>
+
               <ul className="space-y-2">
                 {specialNotes.map((note, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
-                    <span className="text-teal-400 mt-0.5">•</span>
+                  <li key={i} className="text-sm text-slate-300 flex gap-2">
+                    <span className="text-cyan-400 mt-1">•</span>
                     {note}
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </section>
 
-            {/* Follow-up */}
-            <div className="bg-yellow-500/5 border border-yellow-500/20 rounded-2xl p-5 flex items-start gap-3">
-              <FiAlertTriangle className="text-yellow-400 mt-0.5 flex-shrink-0" size={18} />
+            {/* Follow-up (keep warning but soften UI) */}
+            <section className="rounded-2xl border border-yellow-500/20 bg-yellow-500/5 p-5 flex gap-3">
+              <FiAlertTriangle className="text-yellow-400 mt-1" size={18} />
+
               <div>
-                <p className="text-yellow-300 font-semibold text-sm mb-1">Follow-up Required</p>
-                <p className="text-yellow-200/70 text-sm">{data.followUp}</p>
+                <p className="text-yellow-300 font-medium text-sm mb-1">
+                  Follow-up recommended
+                </p>
+                <p className="text-yellow-200/70 text-sm">
+                  {data.followUp}
+                </p>
               </div>
-            </div>
+            </section>
+
           </div>
 
-          {/* ── Right column: sidebar ── */}
-          <div className="space-y-5">
-            <ConfidenceMeter score={data.confidenceScore} />
-            <AudioPlayer language={currentLanguage} />
-            <PrescriptionPreview imageDataURL={imageURL} />
+          {/* ── SIDEBAR (now “Assist Panel”) ── */}
+          <aside className="space-y-5">
 
-            {/* Disclaimer */}
-            <div className="glass-card p-4">
-              <p className="text-xs text-slate-400 leading-relaxed">
-                ⚠️ <strong className="text-slate-300">Medical Disclaimer:</strong> RxRead AI is an assistive tool only. Always follow your doctor's original instructions. Contact your doctor or pharmacist for any questions about your medicines.
-              </p>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <ConfidenceMeter score={data.confidenceScore} />
             </div>
 
-            {/* New analysis CTA */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <AudioPlayer language={currentLanguage} />
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <PrescriptionPreview imageDataURL={imageURL} />
+            </div>
+
+            {/* Disclaimer (visually separated but not loud) */}
+            <div className="text-xs text-slate-500 leading-relaxed px-2">
+              <span className="text-slate-300 font-medium">Medical note:</span>{' '}
+              This tool assists interpretation only. Always follow your doctor’s prescription.
+            </div>
+
             <Link
               to="/upload"
-              className="block text-center btn-ghost text-sm py-3"
+              className="block text-center py-3 rounded-lg bg-white/5 hover:bg-white/10 text-sm transition"
             >
-              Analyze Another Prescription
+              Analyze another prescription
             </Link>
-          </div>
+
+          </aside>
+
         </div>
       </div>
     </div>
