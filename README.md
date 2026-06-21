@@ -33,7 +33,7 @@ It transforms complex handwritten prescriptions into:
 - multilingual explanations  
 - accessible patient-friendly summaries  
 
-Built with a focus on **clarity, trust, and calm interaction design**.
+Built with a focus on **clarity, trust, and Smooth interaction design**.
 
 ---
 
@@ -118,7 +118,7 @@ src/
 
 RxRead AI is not just a UI project.
 
-It explores a simple idea:
+It explores a simple idea with great imapct:
 
 > **Can healthcare communication feel as simple as reading a message?**
 
