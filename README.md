@@ -118,7 +118,7 @@ src/
 
 RxRead AI is not just a UI project.
 
-It explores a simple idea:
+It explores a simple idea with great imapct:
 
 > **Can healthcare communication feel as simple as reading a message?**
 
