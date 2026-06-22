@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Uploads (local storage — Sprint 1 only)
+uploads/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
