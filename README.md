@@ -15,6 +15,7 @@ Transform handwritten medical prescriptions into structured medicine information
 </p>
 
 ---
+<img width="1881" height="829" alt="image" src="https://github.com/user-attachments/assets/083b3d70-fedf-4e9e-8da0-dd873c66d2e5" />
 
 ## ✨ Features
 
