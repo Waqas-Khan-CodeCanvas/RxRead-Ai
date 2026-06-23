@@ -99,12 +99,12 @@ RxRead AI provides a cost-effective and privacy-first approach to prescription d
 ## 👨‍💻 About the Developer
 
 **Waqas Khan**  
-Full-Stack Developer • AI Enthusiast • Open Source Contributor
+Full-Stack Python + Javascript Developer • AI powered Web + Desktop Application  • Open Source Contributor
 
-Passionate about building AI tools, backend systems, and modern web applications.
+building AI tools, backend systems, and modern web applications.
 
 - 🌐 GitHub: https://github.com/Waqas-Khan-CodeCanvas
-- 💼 LinkedIn: https://linkedin.com/in/waqas-khan-codecanvas
+- 💼 LinkedIn: https://linkedin.com/in/waqaskhan-dev
 
 ---
 
