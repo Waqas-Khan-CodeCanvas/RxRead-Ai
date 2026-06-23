@@ -15,8 +15,8 @@ Transform handwritten medical prescriptions into structured medicine information
 </p>
 
 ---
-<img width="1881" height="829" alt="image" src="https://github.com/user-attachments/assets/083b3d70-fedf-4e9e-8da0-dd873c66d2e5" />
-
+<img width="1881" height="829" alt="image" src="https://github.com/user-attachments/assets/083b3d70-fedf-4e9e-8da0-dd873c66d2e5" /><br>
+# [![Netlify Status](https://api.netlify.com/api/v1/badges/916d9709-3acc-415a-a4b3-5c06652cc9d8/deploy-status)](https://app.netlify.com/projects/rxread/deploys) <br>
 ## ✨ Features
 
 - 🧠 AI-Powered Prescription Understanding
