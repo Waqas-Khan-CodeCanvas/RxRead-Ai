@@ -94,18 +94,25 @@ Structured Medical Data
 ## 🎯 Why RxRead AI?
 
 RxRead AI provides a cost-effective and privacy-first approach to prescription digitization. By leveraging Tesseract OCR and Ollama, it removes dependency on paid APIs and enables completely local AI-powered prescription understanding.
-
 ---
 
-## 👨‍💻 About the Developer
+## 👨‍💻 Authorthe Developer
 
-**Waqas Khan**  
-Full-Stack Python + Javascript Developer • AI powered Web + Desktop Application  • Open Source Contributor
-
-building AI tools, backend systems, and modern web applications.
+### **Waqas Khan**
+Full Stack Python + Javascript Developer <br>
+studied @UET Peshawar Full-Stack & AI Developer from Pakistan. building modern Web and Desktop Applications , backend systems, automation tools, and open-source projects.
 
 - 🌐 GitHub: https://github.com/Waqas-Khan-CodeCanvas
 - 💼 LinkedIn: https://linkedin.com/in/waqaskhan-dev
+- 📧 Email: waqaskhan0589@gmail.com
+
+### 🚀 Other Projects
+
+- **Toastify-CTK** — Beautiful toast notifications for CustomTkinter.
+- **Scholarship Finder** — AI-powered scholarship discovery platform.
+- **WhatsApp Bulk Message Bot** — Python automation tool for WhatsApp messaging.
+
+Feel free to connect, collaborate, or contribute to any of my projects.
 
 ---
 
